@@ -29,19 +29,21 @@ window.addEventListener('load', function () {
 // kicks off when user drops the file
 dropArea.addEventListener('drop', handleDrop, false)
 
+// getting clicked points
+let points = []
 document.addEventListener('click', function (e) {
-    // let points = []
     if (e.target.classList.contains('grid')) {
         let btnId = e.target.getAttribute('id')
 
         let grid = document.getElementById(btnId)
         grid.style.transform = 'scale(0.85)'
-        grid.style.background = '#01010c8b'
+        grid.style.background = '#18862178'
 
         // points.push(e.target.x, e.target.y)
-        console.log(grid.offsetTop + ' ' + grid.offsetLeft)
+        points.push(grid.offsetTop + '' + grid.offsetLeft)
+
+        console.log(points)
     }
-    // console.log(points)
 })
 
 function generate() {
@@ -93,6 +95,8 @@ function handleFiles(files) {
 }
 
 function loadFile(file) {
+    dropArea.textContent = ''
+    dropArea.textContent = 'Loading your image...'
     let reader = new FileReader()
     reader.readAsDataURL(file)
     reader.onloadend = function () {
