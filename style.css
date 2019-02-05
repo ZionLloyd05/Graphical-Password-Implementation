@@ -39,13 +39,19 @@ header>p {
 #grids {
     box-shadow: 0 0 25px 9px #ccc, 0 1px 5px 0 rgba(0, 0, 0, .1), 0 0 0 0 transparent;
     margin: 4px auto;
-    padding: 0;
-    background: url('background.jpg');
+    padding: 30px;
+    /* background: url('background.jpg'); */
+    /* border: 2px solid black; */
     background-position: center;
     background-size: contain;
-    height: auto;
+    height: 400px;
     width: 400px;
     border-radius: 7px;
+    transition: border 0.2s ease-out
+}
+
+.highlight {
+    border: 5px dashed pink;
 }
 
 .row {
